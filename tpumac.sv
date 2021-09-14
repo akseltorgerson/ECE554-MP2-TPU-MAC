@@ -16,12 +16,12 @@ module tpumac
   // chagne to non-literal values later
   logic signed [15:0] AB_mul;
 
-  always_ff (@posedge clk, negedge rst_n) begin
+  always_ff @(posedge clk, negedge rst_n) begin
   
     if (~rst_n) begin
-      Aout <= {BITS_AB-1{1'b0}};
-      Bout <= {BITS_AB-1{1'b0}};
-      Cout <= {BITS_C-1{1'b0}};
+      Aout <= 0;
+      Bout <= 0;
+      Cout <= 0;
     end
     else if (en) begin
       Aout <= Ain;
