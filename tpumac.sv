@@ -13,8 +13,7 @@ module tpumac
   );
   
   logic signed [BITS_C-1:0] Cout_add;
-  // chagne to non-literal values later
-  logic signed [15:0] AB_mul;
+  logic signed [(BITS_AB*2)-1:0] AB_mul;
 
   always_ff @(posedge clk, negedge rst_n) begin
   
